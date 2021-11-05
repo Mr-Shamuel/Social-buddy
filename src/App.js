@@ -1,23 +1,70 @@
-import logo from './logo.svg';
+
 import './App.css';
+import React from "react";
+
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
+import Home from './Components/Home/Home';
+import Home2 from './Components/Home2/Home2';
+import Dashboard from './Components/Dashboard/Dashboard';
+import PostDetails from './Components/Posts/PostDetails/PostDetails';
+
+
 
 function App() {
+
+ 
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Social Buddy</h1>
+      
+      <Router>
+      <div>
+        <ul>
+          <li>
+            <Link to="/">Home</Link>
+          </li>
+
+         
+          <li>
+            <Link to="/Home">Home2</Link>
+          </li>
+          <li>
+            <Link to="/dashboard">Dashboard</Link>
+          </li>
+        </ul>
+
+        <hr />
+
+        
+        <Switch>
+          <Route exact path="/">
+            <Home />
+          </Route>
+        
+          <Route  path="/Home">
+            <Home/>
+          </Route>
+
+
+          <Route  path="/Home">
+            <Home2/>
+          </Route>
+          <Route path="/post/:postid">
+            <PostDetails></PostDetails>
+          </Route>
+         
+          <Route path="/dashboard">
+            <Dashboard></Dashboard>
+          </Route>
+        </Switch>
+      </div>
+    </Router>
+      
     </div>
   );
 }
