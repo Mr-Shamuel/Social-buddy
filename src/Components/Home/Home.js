@@ -9,7 +9,7 @@ const Home = () => {
  useEffect(()=>{
    fetch('https://jsonplaceholder.typicode.com/posts')
    .then(res=>res.json())
-//    .then(data=>console.log(data))
+
 .then(data=>setPosts(data))
  },[])
     return (

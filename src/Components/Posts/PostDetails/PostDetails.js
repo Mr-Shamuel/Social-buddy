@@ -16,7 +16,7 @@ const PostDetails = () => {
        .then(data=>setpost(data))
 
 
-   },[])
+   },[postid])
    const [comment,setComment] = useState([]);
    useEffect(()=>{
        fetch(`https://jsonplaceholder.typicode.com/comments?postId${postid}`)
@@ -26,7 +26,7 @@ const PostDetails = () => {
        .then(data=>setComment(data))
 
 
-   },[])
+   },[postid])
     return (
         <div>
            
