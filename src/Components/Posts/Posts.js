@@ -7,16 +7,16 @@ const Posts = (props) => {
     const showComment = id => {
         const url = `post/${id}`;
         history.push(url)
-    
-}
-return (
-    <div>
-        <h3>Id: {id} {title}</h3>
-        <p>{body}</p>
-        <button onClick={() => showComment(id)}>Show components</button>
 
-    </div>
-);
+    }
+    return (
+        <div>
+            <h3>Id: {id} {title}</h3>
+            <p>{body}</p>
+            <button onClick={() => showComment(id)}>Show components</button>
+
+        </div>
+    );
 };
 
 export default Posts;

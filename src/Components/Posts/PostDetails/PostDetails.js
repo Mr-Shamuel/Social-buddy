@@ -37,7 +37,7 @@ const PostDetails = () => {
             {
                 comment.map(x=><View comment={x}></View>)
             }
-           {/* <View></View> */}
+        
          
           
         </div>
